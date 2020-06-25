@@ -53,11 +53,13 @@ public class NumberArray {
         return true;
     }
 
-    @Override // TODO: 24.06.2020 Arrays.toString??? 
     public String toString() {
-        StringBuilder sb = new StringBuilder("NumberArray{");
-        sb.append("array=").append(Arrays.toString(array));
-        sb.append('}');
+        StringBuilder sb = new StringBuilder("NumberArray{ ").append("array=");
+        sb.append("[ ");
+        for(int value : array) {
+            sb.append(value).append(" ");
+        }
+        sb.append("]}");
         return sb.toString();
     }
 
@@ -70,6 +72,7 @@ public class NumberArray {
             return false;
         }
         NumberArray entryObj = (NumberArray) obj;
+        // TODO: 25.06.2020 Arrays? 
         return Arrays.equals(this.array, entryObj.array);
     }
 

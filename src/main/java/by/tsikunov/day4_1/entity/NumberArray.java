@@ -1,6 +1,5 @@
 package by.tsikunov.day4_1.entity;
 
-import java.util.Arrays;
 import java.util.OptionalInt;
 
 public class NumberArray {
@@ -53,6 +52,11 @@ public class NumberArray {
         return true;
     }
 
+    public int getLength() {
+        return this.array.length;
+    }
+
+    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("NumberArray{ ").append("array=");
         sb.append("[ ");
@@ -72,12 +76,26 @@ public class NumberArray {
             return false;
         }
         NumberArray entryObj = (NumberArray) obj;
-        // TODO: 25.06.2020 Arrays? 
-        return Arrays.equals(this.array, entryObj.array);
+
+        if(entryObj.array.length != this.array.length) {
+            return false;
+        }
+        boolean result = true;
+        for (int i = 0; i < entryObj.array.length; i++) {
+            if(entryObj.array[i] != this.array[i]) {
+                result = false;
+                break;
+            }
+        }
+        return result;
     }
 
-    @Override // TODO: 24.06.2020 remake hashCode Arrays???
+    @Override
     public int hashCode() {
-        return Arrays.hashCode(array);
+        int result = 1;
+        for (int value : this.array) {
+            result = 31 * result + value;
+        }
+        return result;
     }
 }

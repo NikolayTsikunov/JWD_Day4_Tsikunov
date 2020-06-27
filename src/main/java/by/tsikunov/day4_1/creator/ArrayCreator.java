@@ -7,7 +7,7 @@ import java.util.Random;
 
 public class ArrayCreator {
 
-    private static final int MAX_CAPACITY = 50;
+    public static final int MAX_CAPACITY = 50;
     private static final int MAX_VALUE = 1000;
     private static final Random random = new Random();
 

@@ -12,7 +12,7 @@ import java.util.List;
 
 public class ArrayReader {
 
-    private static final String DEFAULT_PATH = "data/Data.txt";
+    private static final String DEFAULT_PATH = "src/main/resources/data/arrayData";
 
     public List<String> readFileData(String filePath) {
         Path path = Paths.get(DEFAULT_PATH);
